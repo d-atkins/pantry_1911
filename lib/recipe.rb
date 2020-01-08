@@ -21,6 +21,6 @@ class Recipe
   end
 
   def total_calories
-
+    @ingredients.sum {|ingredient| ingredient_calories(ingredient) }
   end
 end
