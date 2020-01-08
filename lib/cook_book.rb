@@ -10,15 +10,13 @@ class CookBook
   end
 
   def ingredient_report(recipe)
-    report = []
     sorted_ingredients = recipe.ingredients.sort_by do |ingredient|
       1 / (ingredient.calories * recipe.ingredients_required[ingredient]).to_f
     end
-    sorted_ingredients.each do |ingredient|
+    sorted_ingredients.map do |ingredient|
       amount_string = "#{recipe.ingredients_required[ingredient]} #{ingredient.unit}"
-      report << {ingredient: ingredient.name, amount: amount_string}
+      {ingredient: ingredient.name, amount: amount_string}
     end
-    report
   end
 
   def summary
