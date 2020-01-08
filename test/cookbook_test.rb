@@ -37,6 +37,12 @@ class CookbookTest < Minitest::Test
     assert_equal [@recipe1, @recipe2], @cookbook.recipes
   end
 
+  def test_it_can_create_an_ingredient_report
+    @cookbook.add_recipe(@recipe1)
+    expected = [{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}]
+    assert_equal expected, @cookbook.ingredient_report(@recipe1)
+  end
+
   def test_it_can_report_summary
     skip
     @cookbook.add_recipe(@recipe1)
