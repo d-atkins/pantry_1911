@@ -44,7 +44,6 @@ class CookbookTest < Minitest::Test
   end
 
   def test_it_can_report_summary
-    skip
     @cookbook.add_recipe(@recipe1)
     @cookbook.add_recipe(@recipe2)
 
