@@ -22,15 +22,13 @@ class CookBook
   end
 
   def summary
-    report = []
-    @recipes.each do |recipe|
+    @recipes.map do |recipe|
       recipe_report = Hash.new
       recipe_report[:name] = recipe.name
       recipe_report[:details] = Hash.new
       recipe_report[:details][:ingredients] = ingredient_report(recipe)
       recipe_report[:details][:total_calories] = recipe.total_calories
-      report << recipe_report
+      recipe_report
     end
-    report
   end
 end
