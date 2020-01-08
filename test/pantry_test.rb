@@ -5,8 +5,15 @@ require './lib/recipe'
 require './lib/pantry'
 
 class PantryTest < Minitest::Test
+  def setup
+    @pantry = Pantry.new
+  end
+
   def test_it_exists
-    pantry = Pantry.new
-    assert_instance_of Pantry, pantry
+    assert_instance_of Pantry, @pantry
+  end
+
+  def test_it_has_attributes
+    assert_equal ({}), @pantry.stock 
   end
 end
