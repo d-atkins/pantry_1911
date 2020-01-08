@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/ingredient.rb'
+require './lib/ingredient'
 
 class IngredientTest < Minitest::Test
   def setup
