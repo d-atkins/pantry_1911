@@ -52,7 +52,6 @@ class RecipeTest < Minitest::Test
   end
 
   def test_it_can_calculate_total_calories
-    skip
     @recipe.add_ingredient(@ingredient1, 2)
     @recipe.add_ingredient(@ingredient2, 8)
 
