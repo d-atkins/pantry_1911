@@ -15,4 +15,12 @@ class Recipe
   def amount_required(ingredient)
     @ingredients_required[ingredient]
   end
+
+  def ingredient_calories(ingredient)
+    ingredient.calories * @ingredients_required[ingredient]
+  end
+
+  def total_calories
+
+  end
 end
